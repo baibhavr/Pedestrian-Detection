@@ -95,11 +95,11 @@ def hog(image, orientations=9, pixels_per_cell=(8, 8),
 from skimage import io, color
 import matplotlib.pyplot as plt
 
-im = io.imread("/home/baibhav/Desktop/21141_10152775396190072_1336237297_n_sm.jpg")
+im = io.imread("input.jpg")
 im = color.rgb2gray(im)
 hog_v,hog_image = hog(im, orientations=9, pixels_per_cell=(8, 8),cells_per_block=(3, 3), visualise=True, normalise=True)
 print hog_v.shape
 plt.imshow(hog_image);plt.set_cmap ('gray');plt.show() # Display HOG Image
 
-io.imsave("/home/baibhav/Desktop/myhog.jpg", hog_image)
+io.imsave("output-hog.jpg", hog_image)
 '''
